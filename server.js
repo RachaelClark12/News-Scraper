@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 
 // const MONGOURI = process.env.MONGODB_URI || 'mongodb://localhost/unit18Populater';
-mongoose.connect('mongodb://@ds253368.mlab.com:53368/heroku_l77rpg70', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+mongoose.connect('mongodb://ds253368.mlab.com:53368/heroku_l77rpg70', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 
 // Routes
 
