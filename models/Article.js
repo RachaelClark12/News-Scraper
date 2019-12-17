@@ -7,6 +7,11 @@ const ArticleSchema = new Schema({
     required: true,
   },
 
+  summary: {
+    type: String,
+    required: true,
+  },
+
   link: {
     type: String,
     required: true,
@@ -14,9 +19,9 @@ const ArticleSchema = new Schema({
     index: true,
   },
 
-  note: {
+  comment: {
     type: Schema.Types.ObjectId,
-    ref: 'Note',
+    ref: 'Comment',
   },
 });
 

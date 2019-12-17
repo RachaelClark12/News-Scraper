@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="UTF-8">
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
     <title>News Scraper</title>
     <style>
-      body { background-color: #F2F6D0 }
-      #wrapper {
-        width: 960px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 5%;
-      }
+      /* body { background-color: } */
+
       #articles {
         display: inline-block;
         overflow: auto;
         width: 60%;
         height: 700px;
       }
-      #notes {
+      #comments {
         float: right;
         width: 30%;
       }
@@ -34,14 +35,39 @@
         height: 200px;
         font-size: 18px;
       }
+      .article-title {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      p {
+        font-size: 20px;
+      }
+      .site-title {
+        font-size: 100px;
+        background-color: black;
+        color:white;
+        margin-bottom: 20px;
+        padding: 20px;
+        font-family: 'Open Sans Condensed', sans-serif;
+      }
+
     </style>
   </head>
   <body>
-    <div id="wrapper">
-      <h1>USA Today News Scraper</h1>
-      <div id="articles"></div>
-      <div id="notes"></div>
+
+    <div class = 'row site-title'>
+      <div class = 'col-lg-1'></div>
+      <div class = 'col-lg-10 text-center'>Woman's Day News Scraper</div>
+      <div class = 'col-lg-1'></div>
     </div>
+
+    <div class = 'row'>
+      <div class = 'col-lg-1'></div>
+      <div class = 'col-lg-6' id='articles'></div>
+      <div class = 'col-lg-4' id ='comments'></div>
+      <div class = 'col-lg-1'></div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
   </body>
