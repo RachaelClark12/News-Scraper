@@ -1,4 +1,6 @@
 // Grab the articles as a json
+
+$('#scrape-button').on('click', function() {
 $.getJSON('/api/articles', function(data) {
   // For each one
   for (let i = 0; i < data.length; i++) {
@@ -11,6 +13,10 @@ $.getJSON('/api/articles', function(data) {
     `);
   }
 });
+
+
+
+})
 
 
 $(document).on('click', 'p', function() {
@@ -26,7 +32,7 @@ $(document).on('click', 'p', function() {
         $('#comments').append('<h2>' + data.title + '</h2>');
         $('#comments').append('<input id=\'titleinput\' name=\'title\' >');
         $('#comments').append('<textarea id=\'bodyinput\' name=\'body\'></textarea>');
-        $('#comments').append('<button data-id=\'' + data._id + '\' id=\'savecomment\'>Save comment</button>');
+        $('#comments').append('<button class=\'btn btn-dark\' data-id=\'' + data._id + '\' id=\'savecomment\'>Save Comment</button>');
 
         if (data.comment) {
           $('#titleinput').val(data.comment.title);
