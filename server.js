@@ -22,12 +22,12 @@ mongoose.connect(process.env.NODE_ENV === 'production'? process.env.MONGODB_URI 
   app.get('/scrape', async function (req, res) {
     const response = await axios.get('https://www.womansday.com/');
     const $ = cheerio.load(response.data);
-    $('div.simple-item.grid-simple-item.grid-simple-item-last-tablet').each(function (i, element) {
+    $('div.simple-item.grid-simple-item').each(function (i, element) {
       const result = {};
       result.title = $(this)
         .children('a.simple-item-title.item-title')
         .text()
-      result.link = $(this)
+      result.link = 'https://womansday.com' + $(this)
         .children('a.simple-item-title.item-title')
         .attr('href');
       result.summary = $(this)
