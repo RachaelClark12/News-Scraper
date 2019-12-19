@@ -12,9 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-mongoose.connect('mongodb://localhost/womansday-scraper'
-|| 'mongodb://heroku_l77rpg70:chr9ch33pmhtajbii1hrhvde6g@ds253368.mlab.com:53368/heroku_l77rpg70'
-, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+mongoose.connect(process.env.NODE_ENV === 'production'? process.env.MONGODB_URI : 'mongodb://localhost/womansday-scraper'
+// || 'mongodb://heroku_l77rpg70:chr9ch33pmhtajbii1hrhvde6g@ds253368.mlab.com:53368/heroku_l77rpg70'
+, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 
 // Routes
 
